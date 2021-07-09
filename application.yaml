@@ -1,9 +1,9 @@
 spring:
     datasource:
-        url: jdbc:postgresql://${DB_HOST:localhost:49154}/${DB_NAME:online_shop_db}
+        url: jdbc:postgresql://${DB_HOST:postgres_db;5432}/${DB_NAME:online_shop_db}
         driver-class-name: org.postgresql.Driver
         username: ${DB_USER:postgres}
-        password: ${DB_PASSWORD:masterpass}
+        password: ${DB_PASSWORD:postgres}
 
 eureka:
     instance:
@@ -13,4 +13,4 @@ eureka:
         instanceInfoReplicationIntervalSeconds: 5
         initialInstanceInfoReplicationIntervalSeconds: 5
         serviceUrl:
-            defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka/}
+            defaultZone: ${EUREKA_SERVER:http://discovery-service:8761/eureka/}
